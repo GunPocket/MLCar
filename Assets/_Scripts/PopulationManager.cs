@@ -96,6 +96,7 @@ public class PopulationManager : MonoBehaviour {
             CarAgent newCar = newCarObject.GetComponent<CarAgent>();
             NeuralNetwork parentNN = elitePopulation[Random.Range(0, elitePopulation.Count)].GetNeuralNetwork();
             newCar.SetNeuralNetwork(parentNN.Copy()); // Copy the parent neural network
+            newCar.Initialize();
             newPopulation.Add(newCar);
         }
 
@@ -107,7 +108,6 @@ public class PopulationManager : MonoBehaviour {
 
         Debug.Log("New population created with size: " + population.Count);
     }
-
 
     CarAgent Crossover(CarAgent parent1, CarAgent parent2) {
         GameObject newCarObject = Instantiate(carPrefab, carSpawnPoint.position, Quaternion.identity);

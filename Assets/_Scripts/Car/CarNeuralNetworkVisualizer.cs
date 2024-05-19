@@ -78,7 +78,7 @@ public class CarNeuralNetworkVisualizer : MonoBehaviour {
     void DrawCarData() {
         Vector3 carPosition = carAgent.transform.position;
         Vector3 velocity = carAgent.GetComponent<Rigidbody2D>().velocity;
-        float speed = velocity.magnitude/10;
+        float speed = velocity.magnitude;
 
         // Desenhar dados do carro (sem vetores)
 #if UNITY_EDITOR
@@ -90,7 +90,7 @@ public class CarNeuralNetworkVisualizer : MonoBehaviour {
 
     void DrawVectors() {
         Vector3 carPosition = carAgent.transform.position;
-        Vector3 velocity = carAgent.GetComponent<Rigidbody2D>().velocity;
+        Vector3 velocity = carAgent.GetComponent<Rigidbody2D>().velocity/10f;
 
         // Desenhar vetor de velocidade
         Gizmos.color = Color.cyan;

@@ -8,7 +8,7 @@ public class NeuralNetwork {
     private List<Connection> connections;
     private int inputSize;
     private int outputSize;
-    private int hiddenSize; // Adicionando variável para armazenar o tamanho da camada oculta
+    private int hiddenSize; 
 
     public bool structureChanged { get; set; }
 
@@ -18,7 +18,7 @@ public class NeuralNetwork {
         this.outputSize = outputSize;
         neurons = new Dictionary<int, Neuron>();
         connections = new List<Connection>();
-        hiddenSize = 0; // Inicializando o tamanho da camada oculta como 0
+        hiddenSize = 0; 
         CreateNetwork();
     }
 
@@ -107,14 +107,23 @@ public class NeuralNetwork {
 
     public NeuralNetwork Copy() {
         NeuralNetwork copy = new NeuralNetwork(inputSize, outputSize);
+        copy.hiddenSize = this.hiddenSize; // Copiar o tamanho da camada oculta
+
+        // Copiar neurônios
         foreach (var neuron in neurons) {
-            copy.neurons.Add(neuron.Key, new Neuron(neuron.Value.Id, neuron.Value.Type, neuron.Value.LayerIndex, neuron.Value.IndexInLayer));
+            if (!copy.neurons.ContainsKey(neuron.Key)) {
+                copy.neurons.Add(neuron.Key, new Neuron(neuron.Value.Id, neuron.Value.Type, neuron.Value.LayerIndex, neuron.Value.IndexInLayer));
+            }
         }
+
+        // Copiar conexões
         foreach (var connection in connections) {
             copy.connections.Add(new Connection(connection.FromNeuronId, connection.ToNeuronId, connection.Weight));
         }
+
         return copy;
     }
+
 
     public void NotifyStructureChanged() {
         structureChanged = true;

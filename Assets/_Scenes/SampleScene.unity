@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPrefab: {fileID: 5673228620467357652, guid: 7c6ac918f07ee5645a80aa68f5b4c6f5, type: 3}
-  populationSize: 2
+  populationSize: 100
   simulationTime: 10
   mutationRate: 1
   elapsedTime: 10
