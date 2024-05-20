@@ -2,25 +2,22 @@
 
 ## Sobre o Projeto
 
-Este projeto implementa uma simulação de carros em Unity utilizando redes neurais. Os carros são treinados para navegar em um ambiente utilizando uma abordagem baseada em evolução genética.
+Este projeto implementa uma simulação de carros em Unity utilizando redes neurais. Os carros são treinados para navegar em um ambiente utilizando o ML-Agents, uma ferramenta de aprendizado por reforço da Unity Technologies.
 
 ## Funcionalidades
 
 - Simulação de carros em um ambiente 2D.
 - Redes neurais para controle dos carros.
-- Algoritmo genético para evolução e treinamento das redes neurais.
-- Visualização das redes neurais em tempo real.
+- Treinamento dos carros utilizando o ML-Agents.
+- Visualização da simulação em tempo real.
 
 ## Estrutura do Projeto
 
 - `Assets/Scripts/`: Contém todos os scripts C# utilizados no projeto.
-  - `CarAgent.cs`: Script que controla o agente do carro.
-  - `CarController.cs`: Script que controla a física e a lógica do carro.
-  - `NeuralNetwork.cs`: Implementação da rede neural.
-  - `PopulationManager.cs`: Gerencia a população de carros e o processo de evolução.
-  - `FollowCarCamera.cs`: Controla a câmera para seguir o melhor carro.
-  - `NeuralNetworkVisualizer.cs`: Visualiza as redes neurais no editor do Unity.
-
+  - `CarAgent.cs`: Script que define o comportamento do agente do carro utilizando ML-Agents.
+  - `CarEnvironment.cs`: Script que configura o ambiente para o treinamento dos carros.
+  - `Wall.cs`: Script que detecta colisões com paredes para encerrar episódios.
+  
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
@@ -31,24 +28,21 @@ Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para ma
 
 ## About the Project
 
-This project implements a car simulation in Unity using neural networks. The cars are trained to navigate an environment using a genetic algorithm approach.
+This project implements a car simulation in Unity using neural networks. The cars are trained to navigate an environment using ML-Agents, a Unity Technologies reinforcement learning toolkit.
 
 ## Features
 
 - 2D car simulation in an environment.
 - Neural networks for controlling the cars.
-- Genetic algorithm for evolving and training the neural networks.
-- Real-time visualization of the neural networks.
+- Training the cars using ML-Agents.
+- Real-time visualization of the simulation.
 
 ## Project Structure
 
 - `Assets/Scripts/`: Contains all the C# scripts used in the project.
-  - `CarAgent.cs`: Script that controls the car agent.
-  - `CarController.cs`: Script that controls the physics and logic of the car.
-  - `NeuralNetwork.cs`: Implementation of the neural network.
-  - `PopulationManager.cs`: Manages the car population and the evolution process.
-  - `FollowCarCamera.cs`: Controls the camera to follow the best car.
-  - `NeuralNetworkVisualizer.cs`: Visualizes the neural networks in the Unity editor.
+  - `CarAgent.cs`: Script defining the behavior of the car agent using ML-Agents.
+  - `CarEnvironment.cs`: Script setting up the environment for car training.
+  - `Wall.cs`: Script detecting collisions with walls to end episodes.
 
 ## License
 
